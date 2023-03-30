@@ -6,10 +6,10 @@ export default {
       url: "/users/login",
       method: "post",
       data: params,
-      // mock: true,
+      mock: false,
     });
   },
-  noticeCount(){
+  noticeCount() {
     return request({
       url: "/leave/count",
       method: "get",
@@ -17,12 +17,12 @@ export default {
       mock: true,
     });
   },
-  menuList(){
+  menuList() {
     return request({
       url: "/menu/list",
       method: "post",
       data: {},
       mock: true,
     });
-  }
+  },
 };

@@ -2,6 +2,7 @@ import axios from "axios";
 import config from "../config";
 import { ElMessage } from "element-plus";
 import router from "../router";
+import storage from "./storage";
 
 const TOKEN_ERROR = "Token认证失败,请重新登录";
 const NET_ERROR = "网络请求异常,请稍后重试";
@@ -18,7 +19,8 @@ const service = axios.create({
 service.interceptors.request.use((req) => {
   // 公共的请求机制
   const header = req.headers;
-  if (!header.Authorization) header.Authorization = "Jason";
+  const { token="" } = storage.getItem("userInfo") || {};
+  if (!header.Authorization) header.Authorization = "Jason " + token;
   return req;
 });
 
