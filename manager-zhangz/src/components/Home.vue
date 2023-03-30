@@ -1,14 +1,11 @@
 <script>
-import { Setting, Fold, Bell, ArrowDown } from "@element-plus/icons";
 import TreeMenu from "./TreeMenu.vue";
+import Breadcrumb from "./Breadcrumb.vue";
 export default {
   name: "home",
   components: {
-    setting: Setting,
-    fold: Fold,
-    bell: Bell,
-    ArrowDown,
     TreeMenu,
+    Breadcrumb,
   },
   data() {
     return {
@@ -58,6 +55,7 @@ export default {
         background-color="#001529"
         text-color="#fff"
         :collapse="isCollapse"
+        router
       >
         <tree-menu :userMenu="userMenu"></tree-menu>
       </el-menu>
@@ -65,8 +63,12 @@ export default {
     <div :class="['content-right', isCollapse ? 'fold' : 'unfold']">
       <div class="nav-top">
         <div class="nav-left">
-          <fold class="menu-fold" @click="toggle"></fold>
-          <div class="bread">面包屑</div>
+          <div class="menu-fold" @click="toggle">
+            <i class="el-icon-s-fold"></i>
+          </div>
+          <div class="bread">
+            <breadcrumb></breadcrumb>
+          </div>
         </div>
 
         <div class="user-info">
@@ -79,9 +81,10 @@ export default {
           <el-dropdown @command="handleLogout">
             <span class="user-link">
               {{ userInfo.userName }}
-              <el-icon class="el-icon--right">
+              <!-- <el-icon class="el-icon--right">
                 <arrow-down />
-              </el-icon>
+              </el-icon> -->
+              <i class="el-icon--right"></i>
             </span>
             <template #dropdown>
               <el-dropdown-menu>
@@ -158,8 +161,8 @@ export default {
         display: flex;
         align-items: center;
         .menu-fold {
-          width: 25px; //1111
-          height: 25px; //1111
+          // width: 25px; //1111
+          // height: 25px; //1111
           margin-right: 15px;
           font-size: 18px;
         }
