@@ -20,12 +20,12 @@ const routes = [
         },
       },
       {
-        name: "system",
+        name: "用户管理",
         path: "/system/user",
         meta: {
-          title: "系统管理",
+          title: "用户管理",
         },
-        component: () => import("../views/Welcome.vue"),
+        component: () => import("../views/User.vue"),
       },
     ],
   },
