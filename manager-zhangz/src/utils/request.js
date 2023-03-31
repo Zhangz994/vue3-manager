@@ -20,7 +20,7 @@ service.interceptors.request.use((req) => {
   // 公共的请求机制
   const header = req.headers;
   const { token="" } = storage.getItem("userInfo") || {};
-  if (!header.Authorization) header.Authorization = "Jason " + token;
+  if (!header.Authorization) header.Authorization = "Bearer " + token;
   return req;
 });
 

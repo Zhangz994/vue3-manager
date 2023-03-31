@@ -142,6 +142,7 @@
 
 <script>
 import { onMounted, reactive, getCurrentInstance, ref, toRaw } from "vue";
+import utils from "../utils/utils";
 export default {
   name: "User",
   setup() {
@@ -196,10 +197,16 @@ export default {
       {
         label: "注册时间",
         prop: "createTime",
+        formatter(row, column, value) {
+          return utils.formateData(new Date(value));
+        },
       },
       {
         label: "最后登录时间",
         prop: "lastLoginTime",
+        formatter(row, column, value) {
+          return utils.formateData(new Date(value));
+        },
       },
     ]);
     // 分页的配置

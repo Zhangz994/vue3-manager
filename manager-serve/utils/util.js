@@ -14,7 +14,7 @@ module.exports = {
    * @param {number} pageNum
    * @param {number} pageSize
    */
-  pager(pageNum = 1, pageSize = 10) {
+  pager({pageNum = 1, pageSize = 10}) {
     pageNum *= 1;
     pageSize *= 1;
     const skipIndex = (pageNum - 1) * pageSize;

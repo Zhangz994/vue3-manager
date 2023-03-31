@@ -45,7 +45,6 @@ app.use(async (ctx, next) => {
       ctx.status = 200,
       
       ctx.body = util.fail("Token认证失败", util.CODE.AUTH_ERROR);
-      console.log('我这里有错误');
     } else {
       throw error;
     }
