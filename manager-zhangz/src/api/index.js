@@ -38,29 +38,29 @@ export default {
       url: "/users/delete",
       method: "post",
       data: params,
-      mock: true,
+      mock: false,
     });
   },
-  getRoleList(){
+  getRoleList() {
     return request({
       url: "/roles/allList",
       method: "get",
       mock: true,
     });
   },
-  getDeptList(){
+  getDeptList() {
     return request({
       url: "/dept/list",
       method: "get",
       mock: true,
     });
   },
-  userSubmit(parmas){
+  userSubmit(parmas) {
     return request({
       url: "/roles/operate",
       method: "post",
-      data:parmas,
+      data: parmas,
       mock: true,
     });
-  }
+  },
 };

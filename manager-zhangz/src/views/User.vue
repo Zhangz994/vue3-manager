@@ -243,11 +243,11 @@ export default {
       const res = await proxy.$api.userDelete({
         userIds: [row.userId],
       });
-      if (res.nModified) {
+      if (res.modifiedCount > 0) {
         proxy.$message.success("删除成功");
         getUser();
       } else {
-        proxy.$message.success("删除失败");
+        proxy.$message.error("删除失败");
       }
     };
     const checkedUsersId = ref([]);
@@ -260,11 +260,11 @@ export default {
       const res = await proxy.$api.userDelete({
         userIds: checkedUsersId.value,
       });
-      if (res.nModified) {
+      if (res.modifiedCount > 0) {
         proxy.$message.success("删除成功");
         getUser();
       } else {
-        proxy.$$message.success("删除失败");
+        proxy.$$message.error("删除失败");
       }
     };
     const handleSelectionChange = (list) => {

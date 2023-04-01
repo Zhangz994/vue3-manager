@@ -60,7 +60,18 @@ router.get("/list", async (ctx) => {
       list,
     });
   } catch (error) {
-    ctx.body = utils.fail(`查询异常${error.stack}`)
+    ctx.body = utils.fail(`查询异常${error.stack}`);
+  }
+});
+
+router.post("/delete", async (ctx) => {
+  const { userIds } = ctx.request.body;
+  const res = await User.updateMany({ userId: { $in: userIds } }, { state: 2 });
+  if (res.modifiedCount) {
+    ctx.body = utils.success(res, `共删除成功${res.modifiedCount} 条`);
+    return;
+  } else {
+    ctx.body = utils.fail(`删除失败`);
   }
 });
 

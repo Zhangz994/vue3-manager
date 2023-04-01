@@ -19,7 +19,7 @@ const service = axios.create({
 service.interceptors.request.use((req) => {
   // 公共的请求机制
   const header = req.headers;
-  const { token="" } = storage.getItem("userInfo") || {};
+  const { token = "" } = storage.getItem("userInfo") || {};
   if (!header.Authorization) header.Authorization = "Bearer " + token;
   return req;
 });
@@ -48,7 +48,10 @@ function request(options) {
     // 统一 传入的属性有data
     options.params = options.data;
   }
-
+  // 如果options mock没有给值的话，其他请求的mock会覆盖config.mock
+  // 从而使原本本地请求变为mock请求
+  // 解决方案1：api中写死mock:false
+  // 解决方案2：const isMock = config.mock 之后的判断都是对isMock的判断与赋值 这样就不会覆盖config.mock
   if (typeof options.mock !== "undefined") {
     config.mock = options.mock;
   }
