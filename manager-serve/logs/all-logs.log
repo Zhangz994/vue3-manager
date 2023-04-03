@@ -878,3 +878,18 @@
 [2023-04-03T10:22:10.491] [INFO] info - ****数据库连接成功****
 [2023-04-03T10:22:12.408] [INFO] info - ****数据库连接成功****
 [2023-04-03T10:22:14.658] [INFO] info - ****数据库连接成功****
+[2023-04-03T10:22:20.079] [INFO] info - ****数据库连接成功****
+[2023-04-03T10:22:20.143] [INFO] info - get params:{"state":"1","pageNum":"1","pageSize":"10","total":"10"}
+[2023-04-03T10:22:20.144] [INFO] info - post params:{}
+[2023-04-03T10:22:24.005] [INFO] info - get params:{"state":"0","pageNum":"1","pageSize":"10","total":"1"}
+[2023-04-03T10:22:24.006] [INFO] info - post params:{}
+[2023-04-03T10:23:12.230] [INFO] info - get params:{"state":"1","pageNum":"1","pageSize":"10","total":"10"}
+[2023-04-03T10:23:12.231] [INFO] info - post params:{}
+[2023-04-03T10:23:17.167] [INFO] info - get params:{"state":"0","pageNum":"1","pageSize":"10","total":"1"}
+[2023-04-03T10:23:17.168] [INFO] info - post params:{}
+[2023-04-03T10:23:36.029] [INFO] info - get params:{}
+[2023-04-03T10:23:36.029] [INFO] info - post params:{"state":1,"roleList":["60180b07b1eaed6c45fbebdb","60150cb764de99631b2c3cd3","60180b59b1eaed6c45fbebdc"],"userName":"admin","role":0,"deptId":["60167059c9027b7d2c520a61","60167345c6a4417f2d27506f"],"userId":10003,"userEmail":"admin@jason.com@jason.com","createTime":"2021-01-17T13:32:06.381Z","lastLoginTime":"2021-01-17T13:32:06.381Z","__v":0,"job":"前端架构师","mobile":"17611020001","action":"edit"}
+[2023-04-03T10:23:36.272] [INFO] info - get params:{"state":"0","pageNum":"1","pageSize":"10","total":"3"}
+[2023-04-03T10:23:36.272] [INFO] info - post params:{}
+[2023-04-03T10:23:40.375] [INFO] info - get params:{"state":"0","pageNum":"1","pageSize":"10","total":"3"}
+[2023-04-03T10:23:40.375] [INFO] info - post params:{}
