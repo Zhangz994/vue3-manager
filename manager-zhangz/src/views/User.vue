@@ -67,7 +67,11 @@
         @current-change="handleCurrentChange"
       ></el-pagination>
     </div>
-    <el-dialog title="用户新增" v-model="showModal">
+    <el-dialog
+      title="用户新增"
+      v-model="showModal"
+      :before-close="handleCloseDialog"
+    >
       <el-form
         :model="userForm"
         ref="dialogForm"
@@ -358,6 +362,11 @@ export default {
         Object.assign(userForm, row);
       });
     };
+
+    const handleCloseDialog = () => {
+      handleReset("dialogForm");
+      showModal.value = false;
+    };
     return {
       user,
       userList,
@@ -382,6 +391,7 @@ export default {
       handleSubmit,
       handleEdit,
       action,
+      handleCloseDialog,
     };
   },
 };

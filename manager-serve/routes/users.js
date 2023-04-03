@@ -17,7 +17,7 @@ router.post("/login", async (ctx) => {
      * 3 select('userId')
      */
     const res = await User.findOne(
-      { userName, userPwd },
+      { userName, userPwd: md5(userPwd) },
       "userId userName userEmail state role deptId roleList"
     );
     if (res) {

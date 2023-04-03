@@ -51,16 +51,17 @@ function request(options) {
   // 如果options mock没有给值的话，其他请求的mock会覆盖config.mock
   // 从而使原本本地请求变为mock请求
   // 解决方案1：api中写死mock:false
-  // 解决方案2：const isMock = config.mock 之后的判断都是对isMock的判断与赋值 这样就不会覆盖config.mock
+  // 解决方案2：let isMock = config.mock 之后的判断都是对isMock的判断与赋值 这样就不会覆盖config.mock
+  let isMock = config.mock;
   if (typeof options.mock !== "undefined") {
-    config.mock = options.mock;
+    isMock = options.mock;
   }
 
   // 如果不注意 会出现p0级别的bug
   if (config.env === "prod") {
     service.defaults.baseURL = config.baseApi;
   } else {
-    service.defaults.baseURL = config.mock ? config.mockApi : config.baseApi;
+    service.defaults.baseURL = isMock ? config.mockApi : config.baseApi;
   }
   return service(options);
 }

@@ -9,6 +9,7 @@ const bodyparser = require("koa-bodyparser");
 const log4js = require("./utils/log4j");
 const router = require("koa-router")();
 const users = require("./routes/users");
+const menus = require("./routes/menus");
 const jwt = require("jsonwebtoken");
 const koajwt = require("koa-jwt");
 const util = require("./utils/util");
@@ -42,9 +43,8 @@ app.use(async (ctx, next) => {
   log4js.info(`post params:${JSON.stringify(ctx.request.body)}`);
   await next().catch((error) => {
     if (error.status == "401") {
-      ctx.status = 200,
-      
-      ctx.body = util.fail("Token认证失败", util.CODE.AUTH_ERROR);
+      (ctx.status = 200),
+        (ctx.body = util.fail("Token认证失败", util.CODE.AUTH_ERROR));
     } else {
       throw error;
     }
@@ -68,6 +68,7 @@ router.get("/leave/count", (ctx) => {
   // 拿到前端携带过来的token 进行验证
 });
 router.use(users.routes(), users.allowedMethods());
+router.use(menus.routes(), menus.allowedMethods());
 // routes
 app.use(router.routes(), router.allowedMethods());
 
