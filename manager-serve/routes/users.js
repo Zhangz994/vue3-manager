@@ -3,6 +3,8 @@ const User = require("../models/userSchema");
 const utils = require("../utils/util");
 const jwt = require("jsonwebtoken");
 const { ParamName } = require("koa-router");
+const Counter = require("../models/counterSchema");
+const md5 = require("md5");
 router.prefix("/users");
 
 router.post("/login", async (ctx) => {
@@ -39,13 +41,13 @@ router.post("/login", async (ctx) => {
 });
 
 router.get("/list", async (ctx) => {
-  const { userId, userName, State } = ctx.request.query;
+  const { userId, userName, state } = ctx.request.query;
   const { page, skipIndex } = utils.pager(ctx.request.query);
 
   let params = {};
   if (userId) params.userId = userId;
   if (userName) params.userName = userName;
-  if (State && State != "0") params.state = State;
+  if (state && state != "0") params.state = state;
 
   try {
     const query = User.find(params, { _id: 0, userPwd: 0 });
@@ -72,6 +74,74 @@ router.post("/delete", async (ctx) => {
     return;
   } else {
     ctx.body = utils.fail(`删除失败`);
+  }
+});
+
+router.post("/operate", async (ctx) => {
+  const {
+    userId,
+    userName,
+    userEmail,
+    mobile,
+    job,
+    state,
+    roleList,
+    deptId,
+    action,
+  } = ctx.request.body;
+  if (action == "add") {
+    if (!userName || !userEmail || !deptId) {
+      ctx.body = utils.fail("参数错误", utils.CODE.PARAM_ERROR);
+      return;
+    }
+    // 新增用户
+    const res = await User.findOne(
+      { $or: [{ userName }, { userEmail }] },
+      "_id userName userEmail"
+    );
+    if (res) {
+      ctx.body = utils.fail(
+        `监测到有重复的用户，信息如下:${res.userName} - ${res.userEmail}`
+      );
+    } else {
+      try {
+        const doc = await Counter.findOneAndUpdate(
+          { _id: "userId" },
+          { $inc: { sequence_value: 1 } }
+        );
+        const user = new User({
+          userId: doc.sequence_value,
+          userName,
+          userPwd: md5("123456"),
+          userEmail,
+          role: 1,
+          roleList,
+          state,
+          job,
+          deptId,
+          mobile,
+        });
+        user.save();
+        ctx.body = utils.success({}, "用户创建成功");
+      } catch (error) {
+        ctx.fail(error, stack, "用户创建失败");
+      }
+    }
+  } else {
+    if (!deptId) {
+      ctx.body = utils.fail("部门不能为空", utils.CODE.PARAM_ERROR);
+      return;
+    }
+    try {
+      const res = await User.findOneAndUpdate(
+        { userId },
+        { mobile, job, state, roleList, deptId }
+      );
+      ctx.body = utils.success(res, "更新成功");
+      return;
+    } catch (error) {
+      ctx.body = utils.fail("更新失败");
+    }
   }
 });
 

@@ -155,7 +155,7 @@ export default {
     });
     // 查找的数据
     const user = reactive({
-      state: 0,
+      state: 1,
     });
     // 用户列表
     const userList = ref([]);
@@ -337,17 +337,24 @@ export default {
           let res = await proxy.$api.userSubmit(params);
           if (res) {
             showModal.value = false;
-            proxy.$message.success("新增成功");
+            if (action.value == "add") {
+              proxy.$message.success("新增成功");
+            } else {
+              proxy.$message.success("编辑用户成功");
+            }
             handleReset("dialogForm");
             getUser();
           }
         }
       });
     };
+    // 编辑功能
     const handleEdit = (row) => {
       action.value = "edit";
       showModal.value = true;
       proxy.$nextTick(() => {
+        // row.state = Number(row.state);
+        row.state = row.state - 0;
         Object.assign(userForm, row);
       });
     };

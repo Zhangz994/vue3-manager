@@ -57,10 +57,10 @@ export default {
   },
   userSubmit(parmas) {
     return request({
-      url: "/roles/operate",
+      url: "/users/operate",
       method: "post",
       data: parmas,
-      mock: true,
+      mock: false,
     });
   },
 };
