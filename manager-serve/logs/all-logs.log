@@ -1116,3 +1116,352 @@
 [2023-04-03T20:01:12.989] [INFO] info - post params:{}
 [2023-04-03T20:01:12.996] [INFO] info - get params:{}
 [2023-04-03T20:01:12.997] [INFO] info - post params:{}
+[2023-04-03T20:36:57.211] [INFO] info - ****数据库连接成功****
+[2023-04-03T20:36:57.522] [INFO] info - get params:{}
+[2023-04-03T20:36:57.522] [INFO] info - post params:{"userName":"admin","userPwd":"admin"}
+[2023-04-03T20:37:14.713] [INFO] info - get params:{}
+[2023-04-03T20:37:14.713] [INFO] info - post params:{"userName":"admin","userPwd":"admin"}
+[2023-04-03T20:37:36.334] [INFO] info - get params:{}
+[2023-04-03T20:37:36.335] [INFO] info - post params:{"userName":"admin2","userPwd":"123456"}
+[2023-04-03T20:37:36.409] [INFO] info - get params:{}
+[2023-04-03T20:37:36.409] [INFO] info - post params:{}
+[2023-04-03T20:38:56.123] [INFO] info - get params:{}
+[2023-04-03T20:38:56.123] [INFO] info - post params:{}
+[2023-04-03T20:38:56.138] [INFO] info - get params:{}
+[2023-04-03T20:38:56.139] [INFO] info - post params:{}
+[2023-04-03T20:39:58.509] [INFO] info - get params:{}
+[2023-04-03T20:39:58.510] [INFO] info - post params:{}
+[2023-04-03T20:39:58.526] [INFO] info - get params:{}
+[2023-04-03T20:39:58.527] [INFO] info - post params:{}
+[2023-04-03T20:40:25.633] [INFO] info - get params:{}
+[2023-04-03T20:40:25.634] [INFO] info - post params:{}
+[2023-04-03T20:40:25.650] [INFO] info - get params:{}
+[2023-04-03T20:40:25.650] [INFO] info - post params:{}
+[2023-04-03T20:40:52.441] [INFO] info - get params:{}
+[2023-04-03T20:40:52.441] [INFO] info - post params:{}
+[2023-04-03T20:40:52.455] [INFO] info - get params:{}
+[2023-04-03T20:40:52.455] [INFO] info - post params:{}
+[2023-04-03T20:42:56.433] [INFO] info - get params:{}
+[2023-04-03T20:42:56.433] [INFO] info - post params:{}
+[2023-04-04T11:13:30.286] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:13:40.727] [INFO] info - get params:{}
+[2023-04-04T11:13:40.728] [INFO] info - post params:{}
+[2023-04-04T11:13:48.449] [INFO] info - get params:{}
+[2023-04-04T11:13:48.450] [INFO] info - post params:{"userName":"admin","userPwd":"admin"}
+[2023-04-04T11:13:53.880] [INFO] info - get params:{}
+[2023-04-04T11:13:53.880] [INFO] info - post params:{"userName":"admin2","userPwd":"123456"}
+[2023-04-04T11:13:54.275] [INFO] info - get params:{}
+[2023-04-04T11:13:54.275] [INFO] info - post params:{}
+[2023-04-04T11:14:14.063] [INFO] info - get params:{}
+[2023-04-04T11:14:14.063] [INFO] info - post params:{}
+[2023-04-04T11:14:25.304] [INFO] info - get params:{}
+[2023-04-04T11:14:25.305] [INFO] info - post params:{}
+[2023-04-04T11:14:25.459] [INFO] info - get params:{"state":"1","pageNum":"1","pageSize":"10","total":"10"}
+[2023-04-04T11:14:25.460] [INFO] info - post params:{}
+[2023-04-04T11:17:20.925] [INFO] info - get params:{"state":"1","pageNum":"1","pageSize":"10","total":"10"}
+[2023-04-04T11:17:20.926] [INFO] info - post params:{}
+[2023-04-04T11:17:20.939] [INFO] info - get params:{}
+[2023-04-04T11:17:20.939] [INFO] info - post params:{}
+[2023-04-04T11:17:20.942] [INFO] info - get params:{}
+[2023-04-04T11:17:20.942] [INFO] info - post params:{}
+[2023-04-04T11:17:49.951] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:17:51.448] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:17:54.971] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:14.162] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:16.721] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:20.321] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:22.010] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:23.789] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:26.917] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:28.144] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:29.288] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:31.012] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:46.255] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:47.442] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:49.207] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:50.351] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:52.409] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:54.163] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:18:57.081] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:02.459] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:05.358] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:07.992] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:09.444] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:16.256] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:17.868] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:28.269] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:31.015] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:43.962] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:45.653] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:47.462] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:48.427] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:54.025] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:19:55.396] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:01.959] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:04.243] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:07.456] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:11.092] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:14.739] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:16.925] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:18.060] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:20.734] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:28.671] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:35.418] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:37.898] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:41.368] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:43.312] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:47.112] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:49.812] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:20:59.948] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:03.924] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:05.342] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:06.838] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:07.778] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:10.699] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:12.748] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:16.512] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:18.125] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:19.917] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:47.062] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:21:49.230] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:22:48.078] [INFO] info - get params:{"state":"1","pageNum":"1","pageSize":"10","total":"10"}
+[2023-04-04T11:22:48.080] [INFO] info - post params:{}
+[2023-04-04T11:22:48.101] [INFO] info - get params:{}
+[2023-04-04T11:22:48.102] [INFO] info - post params:{}
+[2023-04-04T11:22:48.109] [INFO] info - get params:{}
+[2023-04-04T11:22:48.109] [INFO] info - post params:{}
+[2023-04-04T11:23:42.832] [INFO] info - get params:{"state":"1","pageNum":"1","pageSize":"10","total":"10"}
+[2023-04-04T11:23:42.833] [INFO] info - post params:{}
+[2023-04-04T11:23:42.845] [INFO] info - get params:{}
+[2023-04-04T11:23:42.846] [INFO] info - post params:{}
+[2023-04-04T11:23:42.858] [INFO] info - get params:{}
+[2023-04-04T11:23:42.859] [INFO] info - post params:{}
+[2023-04-04T11:24:01.110] [INFO] info - get params:{}
+[2023-04-04T11:24:01.111] [INFO] info - post params:{}
+[2023-04-04T11:24:01.114] [INFO] info - get params:{}
+[2023-04-04T11:24:01.115] [INFO] info - post params:{}
+[2023-04-04T11:24:05.030] [INFO] info - get params:{}
+[2023-04-04T11:24:05.031] [INFO] info - post params:{}
+[2023-04-04T11:24:05.037] [INFO] info - get params:{}
+[2023-04-04T11:24:05.037] [INFO] info - post params:{}
+[2023-04-04T11:24:05.056] [INFO] info - get params:{}
+[2023-04-04T11:24:05.056] [INFO] info - post params:{}
+[2023-04-04T11:25:08.695] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:25:09.825] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:25:35.566] [INFO] info - get params:{}
+[2023-04-04T11:25:35.567] [INFO] info - post params:{}
+[2023-04-04T11:25:35.614] [INFO] info - get params:{}
+[2023-04-04T11:25:35.615] [INFO] info - post params:{}
+[2023-04-04T11:25:39.301] [INFO] info - get params:{}
+[2023-04-04T11:25:39.302] [INFO] info - post params:{}
+[2023-04-04T11:25:39.316] [INFO] info - get params:{}
+[2023-04-04T11:25:39.317] [INFO] info - post params:{}
+[2023-04-04T11:25:40.251] [INFO] info - get params:{}
+[2023-04-04T11:25:40.252] [INFO] info - post params:{}
+[2023-04-04T11:25:40.269] [INFO] info - get params:{}
+[2023-04-04T11:25:40.270] [INFO] info - post params:{}
+[2023-04-04T11:25:42.272] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:25:42.274] [INFO] info - post params:{}
+[2023-04-04T11:25:42.280] [INFO] info - get params:{}
+[2023-04-04T11:25:42.281] [INFO] info - post params:{}
+[2023-04-04T11:25:42.314] [INFO] info - get params:{}
+[2023-04-04T11:25:42.315] [INFO] info - post params:{}
+[2023-04-04T11:25:44.088] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:25:44.089] [INFO] info - post params:{}
+[2023-04-04T11:25:44.093] [INFO] info - get params:{}
+[2023-04-04T11:25:44.095] [INFO] info - post params:{}
+[2023-04-04T11:25:44.114] [INFO] info - get params:{}
+[2023-04-04T11:25:44.114] [INFO] info - post params:{}
+[2023-04-04T11:26:33.544] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:26:35.891] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:26:56.752] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:40:21.342] [INFO] info - get params:{"total":"1","pageSize":"10","roleName":""}
+[2023-04-04T11:40:21.345] [INFO] info - post params:{}
+[2023-04-04T11:40:37.709] [INFO] info - get params:{"total":"1","pageSize":"10","roleName":""}
+[2023-04-04T11:40:37.709] [INFO] info - post params:{}
+[2023-04-04T11:41:02.498] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:41:02.499] [INFO] info - post params:{}
+[2023-04-04T11:41:02.503] [INFO] info - get params:{}
+[2023-04-04T11:41:02.504] [INFO] info - post params:{}
+[2023-04-04T11:41:02.526] [INFO] info - get params:{}
+[2023-04-04T11:41:02.526] [INFO] info - post params:{}
+[2023-04-04T11:41:06.111] [INFO] info - get params:{}
+[2023-04-04T11:41:06.111] [INFO] info - post params:{"_id":"60180b07b1eaed6c45fbebdb","remark":"Javascript","roleName":"研发111","action":"edit"}
+[2023-04-04T11:41:07.924] [INFO] info - get params:{}
+[2023-04-04T11:41:07.925] [INFO] info - post params:{"_id":"60180b07b1eaed6c45fbebdb","remark":"Javascript","roleName":"研发111","action":"edit"}
+[2023-04-04T11:41:14.071] [INFO] info - get params:{}
+[2023-04-04T11:41:14.071] [INFO] info - post params:{"_id":"60180b07b1eaed6c45fbebdb","remark":"Javascript","roleName":"研发111","action":"edit"}
+[2023-04-04T11:41:35.285] [INFO] info - get params:{}
+[2023-04-04T11:41:35.285] [INFO] info - post params:{"_id":"60180b07b1eaed6c45fbebdb","remark":"前端leader","roleName":"前端leader","action":"create"}
+[2023-04-04T11:41:35.535] [INFO] info - get params:{"total":"1","pageSize":"10","roleName":""}
+[2023-04-04T11:41:35.535] [INFO] info - post params:{}
+[2023-04-04T11:41:39.494] [INFO] info - get params:{}
+[2023-04-04T11:41:39.495] [INFO] info - post params:{"_id":"642b9c6f68151f487af6624a","remark":"前端leader","roleName":"前端leader111","action":"edit"}
+[2023-04-04T11:41:39.830] [INFO] info - get params:{"total":"2","pageSize":"10","roleName":""}
+[2023-04-04T11:41:39.831] [INFO] info - post params:{}
+[2023-04-04T11:41:58.392] [INFO] info - get params:{}
+[2023-04-04T11:41:58.393] [INFO] info - post params:{"_id":"642b9c6f68151f487af6624a","action":"delete"}
+[2023-04-04T11:41:58.727] [INFO] info - get params:{"total":"2","pageSize":"10","roleName":""}
+[2023-04-04T11:41:58.728] [INFO] info - post params:{}
+[2023-04-04T11:43:04.370] [INFO] info - get params:{}
+[2023-04-04T11:43:04.371] [INFO] info - post params:{"_id":"642b9c6f68151f487af6624a","roleName":"前端组长","action":"create"}
+[2023-04-04T11:43:04.637] [INFO] info - get params:{"total":"1","pageSize":"10","roleName":""}
+[2023-04-04T11:43:04.637] [INFO] info - post params:{}
+[2023-04-04T11:43:14.489] [INFO] info - get params:{}
+[2023-04-04T11:43:14.490] [INFO] info - post params:{"_id":"642b9c6f68151f487af6624a","roleName":"前端成员","action":"create"}
+[2023-04-04T11:43:14.828] [INFO] info - get params:{"total":"2","pageSize":"10","roleName":""}
+[2023-04-04T11:43:14.828] [INFO] info - post params:{}
+[2023-04-04T11:43:22.145] [INFO] info - get params:{}
+[2023-04-04T11:43:22.145] [INFO] info - post params:{"_id":"642b9c6f68151f487af6624a","roleName":"前端实习生","action":"create"}
+[2023-04-04T11:43:22.484] [INFO] info - get params:{"total":"3","pageSize":"10","roleName":""}
+[2023-04-04T11:43:22.485] [INFO] info - post params:{}
+[2023-04-04T11:43:26.754] [INFO] info - get params:{"total":"4","pageSize":"10","roleName":"组长"}
+[2023-04-04T11:43:26.755] [INFO] info - post params:{}
+[2023-04-04T11:43:32.699] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:43:32.700] [INFO] info - post params:{}
+[2023-04-04T11:43:33.309] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:43:33.309] [INFO] info - post params:{}
+[2023-04-04T11:49:30.538] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:49:30.538] [INFO] info - post params:{}
+[2023-04-04T11:50:17.033] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:50:18.745] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:50:21.142] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:50:21.143] [INFO] info - post params:{}
+[2023-04-04T11:50:28.768] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:50:32.672] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:50:34.470] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:50:36.132] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:50:36.911] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:50:39.349] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:50:40.136] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:50:40.137] [INFO] info - post params:{}
+[2023-04-04T11:50:51.517] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:50:51.518] [INFO] info - post params:{}
+[2023-04-04T11:52:17.998] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:52:17.999] [INFO] info - post params:{}
+[2023-04-04T11:52:18.103] [INFO] info - get params:{}
+[2023-04-04T11:52:18.104] [INFO] info - post params:{}
+[2023-04-04T11:52:18.957] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:52:18.957] [INFO] info - post params:{}
+[2023-04-04T11:52:19.271] [INFO] info - get params:{}
+[2023-04-04T11:52:19.271] [INFO] info - post params:{}
+[2023-04-04T11:52:19.791] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:52:19.791] [INFO] info - post params:{}
+[2023-04-04T11:52:19.929] [INFO] info - get params:{}
+[2023-04-04T11:52:19.929] [INFO] info - post params:{}
+[2023-04-04T11:52:22.039] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:52:22.039] [INFO] info - post params:{}
+[2023-04-04T11:52:22.355] [INFO] info - get params:{}
+[2023-04-04T11:52:22.356] [INFO] info - post params:{}
+[2023-04-04T11:52:24.035] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:52:24.036] [INFO] info - post params:{}
+[2023-04-04T11:52:24.045] [INFO] info - get params:{}
+[2023-04-04T11:52:24.045] [INFO] info - post params:{}
+[2023-04-04T11:52:26.043] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:52:26.044] [INFO] info - post params:{}
+[2023-04-04T11:52:26.052] [INFO] info - get params:{}
+[2023-04-04T11:52:26.053] [INFO] info - post params:{}
+[2023-04-04T11:52:28.127] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:52:28.128] [INFO] info - post params:{}
+[2023-04-04T11:52:28.208] [INFO] info - get params:{}
+[2023-04-04T11:52:28.208] [INFO] info - post params:{}
+[2023-04-04T11:52:32.862] [INFO] info - get params:{"total":"4","pageSize":"10","roleName":""}
+[2023-04-04T11:52:32.862] [INFO] info - post params:{}
+[2023-04-04T11:52:42.852] [INFO] info - get params:{"total":"4","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:52:42.853] [INFO] info - post params:{}
+[2023-04-04T11:53:43.557] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:53:45.079] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:53:46.772] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:53:47.533] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:53:50.922] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:53:50.923] [INFO] info - post params:{}
+[2023-04-04T11:53:58.134] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:54:06.745] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:54:08.265] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:54:08.266] [INFO] info - post params:{}
+[2023-04-04T11:54:43.158] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:54:43.158] [INFO] info - post params:{}
+[2023-04-04T11:55:18.403] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:55:19.938] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":"前端"}
+[2023-04-04T11:55:19.938] [INFO] info - post params:{}
+[2023-04-04T11:55:32.008] [INFO] info - ****数据库连接成功****
+[2023-04-04T11:55:34.676] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T11:55:34.677] [INFO] info - post params:{}
+[2023-04-04T11:55:34.807] [INFO] info - get params:{}
+[2023-04-04T11:55:34.808] [INFO] info - post params:{}
+[2023-04-04T11:55:57.198] [INFO] info - get params:{}
+[2023-04-04T11:55:57.199] [INFO] info - post params:{"roleName":"前端1","action":"create"}
+[2023-04-04T11:55:57.545] [INFO] info - get params:{"total":"4","pageSize":"10","roleName":""}
+[2023-04-04T11:55:57.546] [INFO] info - post params:{}
+[2023-04-04T11:56:00.186] [INFO] info - get params:{}
+[2023-04-04T11:56:00.186] [INFO] info - post params:{"roleName":"前端2","action":"create"}
+[2023-04-04T11:56:00.529] [INFO] info - get params:{"total":"5","pageSize":"10","roleName":""}
+[2023-04-04T11:56:00.530] [INFO] info - post params:{}
+[2023-04-04T11:56:03.710] [INFO] info - get params:{}
+[2023-04-04T11:56:03.711] [INFO] info - post params:{"roleName":"前端3","action":"create"}
+[2023-04-04T11:56:04.050] [INFO] info - get params:{"total":"6","pageSize":"10","roleName":""}
+[2023-04-04T11:56:04.050] [INFO] info - post params:{}
+[2023-04-04T11:56:07.902] [INFO] info - get params:{}
+[2023-04-04T11:56:07.903] [INFO] info - post params:{"roleName":"前端4","action":"create"}
+[2023-04-04T11:56:08.238] [INFO] info - get params:{"total":"7","pageSize":"10","roleName":""}
+[2023-04-04T11:56:08.239] [INFO] info - post params:{}
+[2023-04-04T11:56:11.106] [INFO] info - get params:{}
+[2023-04-04T11:56:11.106] [INFO] info - post params:{"roleName":"前端6","action":"create"}
+[2023-04-04T11:56:11.445] [INFO] info - get params:{"total":"8","pageSize":"10","roleName":""}
+[2023-04-04T11:56:11.446] [INFO] info - post params:{}
+[2023-04-04T11:56:16.002] [INFO] info - get params:{}
+[2023-04-04T11:56:16.002] [INFO] info - post params:{"roleName":"前端7","action":"create"}
+[2023-04-04T11:56:16.340] [INFO] info - get params:{"total":"9","pageSize":"10","roleName":""}
+[2023-04-04T11:56:16.340] [INFO] info - post params:{}
+[2023-04-04T11:56:21.877] [INFO] info - get params:{}
+[2023-04-04T11:56:21.878] [INFO] info - post params:{"roleName":"前端9","action":"create"}
+[2023-04-04T11:56:22.218] [INFO] info - get params:{"total":"10","pageSize":"10","roleName":""}
+[2023-04-04T11:56:22.218] [INFO] info - post params:{}
+[2023-04-04T11:56:26.913] [INFO] info - get params:{}
+[2023-04-04T11:56:26.914] [INFO] info - post params:{"roleName":"前端10","action":"create"}
+[2023-04-04T11:56:27.250] [INFO] info - get params:{"total":"11","pageSize":"10","roleName":""}
+[2023-04-04T11:56:27.250] [INFO] info - post params:{}
+[2023-04-04T11:56:28.661] [INFO] info - get params:{"total":"12","pageSize":"10","pageNum":"2","roleName":""}
+[2023-04-04T11:56:28.662] [INFO] info - post params:{}
+[2023-04-04T11:56:30.334] [INFO] info - get params:{"total":"12","pageSize":"10","pageNum":"1","roleName":""}
+[2023-04-04T11:56:30.335] [INFO] info - post params:{}
+[2023-04-04T11:56:32.574] [INFO] info - get params:{"total":"12","pageSize":"10","pageNum":"2","roleName":""}
+[2023-04-04T11:56:32.574] [INFO] info - post params:{}
+[2023-04-04T11:57:35.829] [INFO] info - get params:{"total":"12","pageSize":"10","pageNum":"1","roleName":""}
+[2023-04-04T11:57:35.829] [INFO] info - post params:{}
+[2023-04-04T11:57:39.782] [INFO] info - get params:{}
+[2023-04-04T11:57:39.782] [INFO] info - post params:{"_id":"642b9cc868151f487af66254","remark":"111","roleName":"前端组长","action":"edit"}
+[2023-04-04T11:57:40.122] [INFO] info - get params:{"total":"12","pageSize":"10","pageNum":"1","roleName":""}
+[2023-04-04T11:57:40.122] [INFO] info - post params:{}
+[2023-04-04T12:00:32.149] [INFO] info - get params:{}
+[2023-04-04T12:00:32.159] [INFO] info - post params:{}
+[2023-04-04T12:00:32.163] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T12:00:32.164] [INFO] info - post params:{}
+[2023-04-04T12:00:32.193] [INFO] info - get params:{}
+[2023-04-04T12:00:32.194] [INFO] info - post params:{}
+[2023-04-04T12:00:41.675] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T12:00:41.676] [INFO] info - post params:{}
+[2023-04-04T12:00:41.679] [INFO] info - get params:{}
+[2023-04-04T12:00:41.680] [INFO] info - post params:{}
+[2023-04-04T12:00:41.706] [INFO] info - get params:{}
+[2023-04-04T12:00:41.706] [INFO] info - post params:{}
+[2023-04-04T12:00:43.655] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T12:00:43.656] [INFO] info - post params:{}
+[2023-04-04T12:00:43.659] [INFO] info - get params:{}
+[2023-04-04T12:00:43.659] [INFO] info - post params:{}
+[2023-04-04T12:00:43.685] [INFO] info - get params:{}
+[2023-04-04T12:00:43.685] [INFO] info - post params:{}
+[2023-04-04T12:00:45.142] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T12:00:45.144] [INFO] info - post params:{}
+[2023-04-04T12:00:45.146] [INFO] info - get params:{}
+[2023-04-04T12:00:45.147] [INFO] info - post params:{}
+[2023-04-04T12:00:45.172] [INFO] info - get params:{}
+[2023-04-04T12:00:45.172] [INFO] info - post params:{}
+[2023-04-04T12:00:46.714] [INFO] info - get params:{}
+[2023-04-04T12:00:46.714] [INFO] info - post params:{}
+[2023-04-04T12:00:46.717] [INFO] info - get params:{"total":"0","pageSize":"10","roleName":""}
+[2023-04-04T12:00:46.717] [INFO] info - post params:{}
+[2023-04-04T12:00:46.745] [INFO] info - get params:{}
+[2023-04-04T12:00:46.745] [INFO] info - post params:{}
+[2023-04-04T12:02:31.769] [INFO] info - get params:{}
+[2023-04-04T12:02:31.769] [INFO] info - post params:{}

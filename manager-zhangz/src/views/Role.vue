@@ -1,30 +1,21 @@
 <template>
   <div class="role-manage">
     <div class="query-form">
-      <el-form :model="queryForm" :inline="true" ref="form">
-        <el-form-item label="菜单名称" prop="menuName">
-          <el-input
-            v-model="queryForm.menuName"
-            placeholder="请输入菜单名称"
-          ></el-input>
-        </el-form-item>
-        <el-form-item label="菜单状态" prop="menuState">
-          <el-select v-model="queryForm.menuState">
-            <el-option :value="1" label="正常"></el-option>
-            <el-option :value="2" label="禁用"></el-option>
-          </el-select>
+      <el-form :inline="true" :model="queryForm" ref="form">
+        <el-form-item label="角色名称" prop="roleName">
+          <el-input v-model="queryForm.roleName" placeholder="请输入角色名称" />
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="handleQuery">查询</el-button>
-          <el-button @click="handleReset">重置</el-button>
+          <el-button type="primary" @click="getRoleList">查询</el-button>
+          <el-button>重置</el-button>
         </el-form-item>
       </el-form>
     </div>
     <div class="base-table">
       <div class="action">
-        <el-button type="primary" @click="handleAdd(1)">创建</el-button>
+        <el-button type="primary" @click="handleAdd">创建</el-button>
       </div>
-      <el-table :data="menuList" style="width: 100%" row-key="_id">
+      <el-table :data="roleList" style="width: 100%" row-key="_id">
         <el-table-column
           v-for="item in columns"
           :key="item.prop"
@@ -33,104 +24,92 @@
           :width="item.width"
           :formatter="item.formatter"
         />
-        <el-table-column label="操作" width="220">
+        <el-table-column label="操作" width="280">
           <template #default="scope">
-            <el-button
-              type="primary"
-              size="mini"
-              @click="handleAdd(2, scope.row)"
+            <el-button size="mini" @click="handleEdit(scope.row)"
+              >编辑</el-button
             >
-              新增
-            </el-button>
-            <el-button size="mini" @click="handleEdit(scope.row)">
-              编辑
-            </el-button>
+            <el-button
+              size="mini"
+              type="primary"
+              @click="handlePermission(scope.row)"
+              >设置权限</el-button
+            >
             <el-button
               type="danger"
               size="mini"
-              @click="handleDelete(scope.row._id)"
+              @click="handelDelete(scope.row._id)"
+              >删除</el-button
             >
-              删除
-            </el-button>
           </template>
         </el-table-column>
       </el-table>
+      <el-pagination
+        background
+        layout="prev, pager, next"
+        :total="pager.total"
+        class="pagination"
+        :page-size="pager.pageSize"
+        @current-change="handleCurrentChange"
+      >
+      </el-pagination>
     </div>
     <el-dialog
-      title="菜单新增"
+      title="角色新增"
       v-model="showModal"
       :before-close="handleCloseDialog"
     >
       <el-form
-        :model="menuForm"
+        :model="roleForm"
+        label-width="120px"
         ref="dialogForm"
-        label-width="100px"
         :rules="rules"
       >
-        <el-form-item prop="parentId" label="父级菜单">
-          <el-cascader
-            v-model="menuForm.parentId"
-            :options="menuList"
-            :props="{ checkStrictly: true, value: '_id', label: 'menuName' }"
-            clearable
-          />
-          <span>不选则默认是创建一级菜单</span>
+        <el-form-item prop="roleName" label="角色名称">
+          <el-input placeholder="请输入角色名称" v-model="roleForm.roleName" />
         </el-form-item>
-        <el-form-item prop="menuType" label="菜单类型">
-          <el-radio-group v-model="menuForm.menuType">
-            <el-radio :label="1">菜单</el-radio>
-            <el-radio :label="2">按钮</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item prop="menuName" label="菜单名称">
+        <el-form-item prop="remark" label="备注">
           <el-input
-            placeholder="请输入菜单的名称"
-            v-model="menuForm.menuName"
+            type="textarea"
+            :rows="2"
+            placeholder="请输入备注"
+            v-model="roleForm.remark"
           />
-        </el-form-item>
-        <el-form-item
-          prop="icon"
-          label="菜单图标"
-          v-show="menuForm.menuType == 1"
-        >
-          <el-input placeholder="请输入菜单图标" v-model="menuForm.icon" />
-        </el-form-item>
-        <el-form-item
-          prop="path"
-          label="路由地址"
-          v-show="menuForm.menuType == 1"
-        >
-          <el-input placeholder="请输入路由地址" v-model="menuForm.path" />
-        </el-form-item>
-        <el-form-item
-          prop="menuCode"
-          label="权限标识"
-          v-show="menuForm.menuType == 2"
-        >
-          <el-input placeholder="请输入权限标识" v-model="menuForm.menuCode" />
-        </el-form-item>
-        <el-form-item
-          prop="component"
-          label="组件路径"
-          v-show="menuForm.menuType == 1"
-        >
-          <el-input placeholder="请输入组件路径" v-model="menuForm.component" />
-        </el-form-item>
-        <el-form-item
-          prop="menuState"
-          label="菜单状态"
-          v-show="menuForm.menuType == 1"
-        >
-          <el-radio-group v-model="menuForm.menuState">
-            <el-radio :label="1">正常</el-radio>
-            <el-radio :label="2">禁用</el-radio>
-          </el-radio-group>
         </el-form-item>
       </el-form>
       <template #footer>
         <span class="dialog-footer">
           <el-button @click="handleClose">取消</el-button>
-          <el-button type="primary" @click="handleSubmit"> 新增 </el-button>
+          <el-button type="primary" @click="handleSubmit">确定</el-button>
+        </span>
+      </template>
+    </el-dialog>
+    <el-dialog
+      title="设置权限"
+      v-model="showPermission"
+      :before-close="handlePermissionClose"
+    >
+      <el-form label-width="120px">
+        <el-form-item prop="roleName" label="角色名称">
+          {{ curRoleName }}
+        </el-form-item>
+        <el-form-item prop="remark" label="选择权限">
+          <el-tree
+            :data="menuList"
+            show-checkbox
+            node-key="_id"
+            :props="{ label: 'menuName' }"
+            default-expand-all
+            ref="permissionTree"
+          />
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="handlePermissionClose">取消</el-button>
+          <el-button type="primary" @click="handlePermissionSubmit"
+            >确定</el-button
+          >
         </span>
       </template>
     </el-dialog>
@@ -143,108 +122,99 @@ export default {
   name: "Role",
   data() {
     return {
-      menuForm: {
-        menuType: 1,
-        menuState: 1,
-        parentId: [null],
-      },
       queryForm: {
-        menuState: 1,
+        roleName: "",
       },
-      menuList: [],
       columns: [
         {
-          label: "菜单名称",
-          prop: "menuName",
+          label: "角色名称",
+          prop: "roleName",
+          width: 180,
         },
         {
-          label: "图标",
-          prop: "icon",
+          label: "备注",
+          prop: "remark",
         },
         {
-          label: "权限标识",
-          prop: "menuCode",
-        },
-        {
-          label: "路由地址",
-          prop: "path",
-        },
-        {
-          label: "组件路径",
-          prop: "component",
-        },
-        {
-          label: "菜单状态",
-          prop: "menuState",
-          formatter(row, column, value) {
-            return {
-              1: "正常",
-              2: "禁用",
-            }[value];
+          label: "权限列表",
+          prop: "permissionList",
+          formatter: (row, column, value) => {
+            let names = [];
+            let list = value.halfCheckedKeys || [];
+            list.map((key) => {
+              let name = this.actionMap[key];
+              if (key && name) names.push(name);
+            });
+            return names.join(",");
           },
         },
         {
-          label: "创建时间",
+          label: "创建时间", // 按钮权限的标识
           prop: "createTime",
           formatter(row, column, value) {
             return utils.formateData(new Date(value));
           },
+          // width: 180,
         },
+        // {
+        //   label: "更新时间", // 按钮权限的标识
+        //   prop: "updateTime",
+        //   formatter(row, column, value) {
+        //     return utils.formateData(new Date(value));
+        //   },
+        //   width: 180,
+        // },
       ],
+      roleList: [],
+      pager: {
+        total: 0,
+        pageSize: 10,
+      },
       showModal: false,
-      action: "add",
+      roleForm: {},
       rules: {
-        menuName: [
+        roleName: [
           {
             required: true,
-            message: "请输入菜单的名称",
-            trigger: "blur",
-          },
-          {
-            min: 2,
-            max: 8,
-            message: "长度在2-8个字符",
+            message: "请输入角色名称",
             trigger: "blur",
           },
         ],
       },
+      action: "",
+      showPermission: false,
+      curRoleName: "",
+      curRoleId: "",
+      menuList: [],
+      actionMap: {},
     };
   },
+  mounted() {
+    this.getRoleList();
+    this.getMenuList();
+  },
   methods: {
-    async getMenuList() {
-      const res = await this.$api.menuList(this.menuForm);
-      this.menuList = res;
+    async getRoleList() {
+      const { list, page } = await this.$api.roleList({
+        ...this.pager,
+        ...this.queryForm,
+      });
+      this.roleList = list;
+      this.pager.total = page.total;
     },
-    handleQuery() {
-      this.menuForm.menuState = this.queryForm.menuState;
-      this.menuForm.menuName = this.queryForm.menuName;
-      this.getMenuList();
+    async handelDelete(_id) {
+      await this.$api.roleOperate({ _id, action: "delete" });
+      this.$message.success("删除成功");
+      this.getRoleList();
     },
+    handleAdd() {
+      this.showModal = true;
+      this.action = "create";
+    },
+    handleRoleQuery() {},
+    // 表单重置
     handleReset(form) {
       this.$refs[form].resetFields();
-    },
-    handleAdd(type, row) {
-      this.showModal = true;
-      this.action = "add";
-      if (type == 2) {
-        this.menuForm.parentId = [...row.parentId, row._id].filter(
-          (item) => item
-        );
-      }
-    },
-    handleEdit(row) {
-      this.showModal = true;
-      this.action = "edit";
-      // 为什么用$nextTick可以解决
-      this.$nextTick(() => {
-        Object.assign(this.menuForm, row);
-      });
-      // Object.assign(this.menuForm, row);
-    },
-    async handleDelete(_id) {
-      await this.$api.menuSubmit({ _id, action: "delete" });
-      this.$message.success("删除成功");
-      this.getMenuList();
     },
     handleCloseDialog() {
       this.handleReset("dialogForm");
@@ -254,25 +224,102 @@ export default {
       this.handleReset("dialogForm");
       this.showModal = false;
     },
+    // 角色编辑
+    handleEdit(row) {
+      this.action = "edit";
+      this.showModal = true;
+      this.$nextTick(() => {
+        this.roleForm = {
+          _id: row._id,
+          remark: row.remark,
+          roleName: row.roleName,
+        };
+      });
+    },
+    // 角色删除
+    async handleDel(_id) {
+      await this.$api.roleOperate({ _id, action: "delete" });
+      this.$message.success("删除成功");
+      this.getRoleList();
+    },
+    // 角色提交
     handleSubmit() {
       this.$refs.dialogForm.validate(async (valid) => {
         if (valid) {
-          let { action, menuForm } = this;
-          let params = {
-            ...menuForm,
-            action,
-          };
-          await this.$api.menuSubmit(params);
-          this.showModal = false;
-          this.$message.success("操作成功");
-          this.handleReset("dialogForm");
-          this.getMenuList();
+          let { roleForm, action } = this;
+          let params = { ...roleForm, action };
+          let res = await this.$api.roleOperate(params);
+          if (res) {
+            this.showModal = false;
+            this.$message.success("创建成功");
+            this.handleReset("dialogForm");
+            this.getRoleList();
+          }
         }
       });
     },
-  },
-  mounted() {
-    this.getMenuList();
+    handleCurrentChange(current) {
+      this.pager.pageNum = current;
+      this.getRoleList();
+    },
+    handlePermissionClose() {
+      this.showPermission = false;
+    },
+    handlePermission(row) {
+      this.curRoleId = row._id;
+      this.curRoleName = row.roleName;
+      this.showPermission = true;
+      // 第二步 设置节点
+      const { checkedKeys } = row.permissionList;
+      setTimeout(() => {
+        this.$refs.permissionTree.setCheckedKeys(checkedKeys);
+      });
+    },
+    async getMenuList() {
+      const list = await this.$api.menuList();
+      this.menuList = list;
+      this.getActionMap(list);
+    },
+    async handlePermissionSubmit() {
+      let nodes = this.$refs.permissionTree.getCheckedNodes();
+      let halfKeys = this.$refs.permissionTree.getHalfCheckedKeys();
+      let checkedKeys = [];
+      let parentKeys = [];
+      nodes.map((node) => {
+        if (!node.children) {
+          checkedKeys.push(node._id);
+        } else {
+          parentKeys.push(node._id);
+        }
+      });
+      let params = {
+        _id: this.curRoleId,
+        permissionList: {
+          checkedKeys,
+          halfCheckedKeys: parentKeys.concat(halfKeys),
+        },
+      };
+      await this.$api.updatePermission(params);
+      this.showPermission = false;
+      this.$message.success("设置成功");
+      this.getRoleList();
+    },
+    getActionMap(list) {
+      let actionMap = {};
+      const deep = (arr) => {
+        while (arr.length) {
+          let item = arr.pop();
+          if (item.children && item.action) {
+            actionMap[item._id] = item.menuMame;
+          }
+          if (item.children && !item.children) {
+            deep(item.children);
+          }
+        }
+      };
+      deep(JSON.parse(JSON.stringify(list)));
+      this.actionMap = actionMap;
+    },
   },
 };
 </script>
