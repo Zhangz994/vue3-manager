@@ -34,7 +34,7 @@ export default {
       this.noticeCount = res;
     },
     async getMenuList() {
-      const res = await this.$api.menuList();
+      const res = await this.$api.permissionList();
       this.userMenu = res;
     },
   },

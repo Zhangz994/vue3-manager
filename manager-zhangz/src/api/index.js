@@ -21,8 +21,16 @@ export default {
     return request({
       url: "/menu/list",
       method: "get",
-      data: {},
-      // mock: false,
+      // data: {},
+      // mock: true,
+    });
+  },
+  permissionList() {
+    return request({
+      url: "/users/getPremissionList",
+      method: "get",
+      // data: {},
+      // mock: true,
     });
   },
   userList(params) {
@@ -31,6 +39,14 @@ export default {
       method: "get",
       data: params,
       // mock: false,
+    });
+  },
+  userAllList() {
+    return request({
+      url: "/users/all/list",
+      method: "get",
+      // data: params,
+      // mock: true,
     });
   },
   userDelete(params) {
@@ -48,11 +64,12 @@ export default {
       // mock: true,
     });
   },
-  getDeptList() {
+  getDeptList(params) {
     return request({
       url: "/dept/list",
       method: "get",
-      mock: true,
+      mock: false,
+      data: params,
     });
   },
   userSubmit(parmas) {
@@ -71,7 +88,7 @@ export default {
       // mock: true,
     });
   },
-  roleList(params){
+  roleList(params) {
     return request({
       url: "/roles/list",
       method: "get",
@@ -79,7 +96,7 @@ export default {
       // mock: true,
     });
   },
-  roleOperate(params){
+  roleOperate(params) {
     return request({
       url: "/roles/operate",
       method: "post",
@@ -87,12 +104,20 @@ export default {
       // mock: true,
     });
   },
-  updatePermission(params){
+  updatePermission(params) {
     return request({
       url: "/roles/update/permission",
       method: "post",
       data: params,
       // mock: true,
     });
-  }
+  },
+  deptOperate(params) {
+    return request({
+      url: "/dept/operate",
+      method: "post",
+      data: params,
+      mock: false,
+    });
+  },
 };
