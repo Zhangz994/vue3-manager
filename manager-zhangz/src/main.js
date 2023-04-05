@@ -18,5 +18,21 @@ app.config.globalProperties.$request = request;
 app.config.globalProperties.$storage = storage;
 app.config.globalProperties.$api = api;
 
-app.use(router).use(ElementPlus,{size:'small'}).use(store).mount("#app");
+app.directive("has", {
+  beforeMount: (el, binding) => {
+    let userAction = storage.getItem("actionList");
+    let value = binding.value;
+    let hasPermission = userAction.includes(value);
+    if (!hasPermission) {
+      el.style.display = "none";
+        setTimeout(()=>{
+          el.parentNode.removeChild(el);
+        })
+
+    //   el.parentNode.removeChild(el);
+    }
+  },
+});
+
+app.use(router).use(ElementPlus, { size: "small" }).use(store).mount("#app");
 // console.log("环境变量", import.meta.env);

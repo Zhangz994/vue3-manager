@@ -29,7 +29,7 @@ export default {
     return request({
       url: "/users/getPremissionList",
       method: "get",
-      // data: {},
+      data: {},
       // mock: true,
     });
   },

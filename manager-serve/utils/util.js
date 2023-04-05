@@ -48,9 +48,8 @@ module.exports = {
     if (authorization) {
       let token = authorization.split(" ")[1];
       return jwt.verify(token, "jason");
-    } else {
-      return "";
-    }
+    } 
+    return ''
   },
   getTree(rootList, id, list) {
     for (let i = 0; i < rootList.length; i++) {

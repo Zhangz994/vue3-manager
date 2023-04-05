@@ -147,60 +147,62 @@ router.post("/operate", async (ctx) => {
   }
 });
 
-router.get('/all/list', async (ctx) => {
+router.get("/all/list", async (ctx) => {
   try {
-    const list = await User.find({}, "userId userName userEmail")
-    ctx.body = utils.success(list)
+    const list = await User.find({}, "userId userName userEmail");
+    ctx.body = utils.success(list);
   } catch (error) {
-    ctx.body = utils.fail(error.stack)
+    ctx.body = utils.fail(error.stack);
   }
-})
+});
 
-router.get('/getPremissionList', async (ctx) => {
-  let authorization = ctx.request.headers.authorization
-  let { data } = utils.decoded(authorization)
-  let menuList = await getMenuList(data.role, data.roleList)
-  let actionList = getActionList(JSON.parse(JSON.stringify(menuList)))
-  ctx.body = utils.success({ menuList, actionList })
-})
+router.get("/getPremissionList", async (ctx) => {
+  let authorization = ctx.request.headers.authorization;
+  let { data } = utils.decoded(authorization);
+  let menuList = await getMenuList(data.role, data.roleList);
+  let actionList = getActionList(JSON.parse(JSON.stringify(menuList)));
+  ctx.body = utils.success({ menuList, actionList });
+});
 
 async function getMenuList(userRole, roleKeys) {
-  let rootList = []
+  let rootList = [];
   if (userRole == 0) {
-    rootList = await Menu.find({}) || []
+    rootList = (await Menu.find({})) || [];
   } else {
-    let roleList = await Role.find({ _id: { $in: roleKeys } })
-    let permissionList = []
-    roleList.map(role => {
-      let { checkedKeys, halfCheckedKeys } = role.permissionList
+    let roleList = await Role.find({ _id: { $in: roleKeys } });
+    let permissionList = [];
+    roleList.map((role) => {
+      let { checkedKeys, halfCheckedKeys } = role.permissionList;
       console.log(checkedKeys, halfCheckedKeys);
-      permissionList = permissionList.concat(...checkedKeys, ...halfCheckedKeys)
-
-    })
-    permissionList = [...new Set(permissionList)]
-    rootList = await Menu.find({ _id: { $in: permissionList } })
+      permissionList = permissionList.concat(
+        ...checkedKeys,
+        ...halfCheckedKeys
+      );
+    });
+    permissionList = [...new Set(permissionList)];
+    rootList = await Menu.find({ _id: { $in: permissionList } });
   }
-  return utils.getTree(rootList, null, [])
+  return utils.getTree(rootList, null, []);
 }
 
 function getActionList(list) {
-  const actionList = []
+  const actionList = [];
   const deep = (arr) => {
     while (arr.length) {
       let item = arr.pop();
       if (item.action) {
-        item.action.map(action => {
-          actionList.push(action.menuCode)
-        })
+        item.action.map((action) => {
+          actionList.push(action.menuCode);
+        });
       }
       if (item.children && !item.action) {
         deep(item.children);
       }
     }
   };
-  deep(list)
+  deep(list);
 
-  return actionList
+  return actionList;
 }
 
 module.exports = router;
