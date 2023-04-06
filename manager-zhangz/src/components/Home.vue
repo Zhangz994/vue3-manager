@@ -16,8 +16,8 @@ export default {
     };
   },
   mounted() {
-    this.getNoticeCount();
     this.getMenuList();
+    this.getNoticeCount();
   },
   methods: {
     handleLogout(key) {
@@ -31,7 +31,7 @@ export default {
     },
     async getNoticeCount() {
       const res = await this.$api.noticeCount();
-      this.noticeCount = res;
+      this.$store.commit("saveNoticeCount", res);
     },
     async getMenuList() {
       const { menuList, actionList } = await this.$api.permissionList();
@@ -39,7 +39,6 @@ export default {
       this.$store.commit("saveMenuList", menuList);
       this.$store.commit("saveActionList", actionList);
     },
-    
   },
 };
 </script>

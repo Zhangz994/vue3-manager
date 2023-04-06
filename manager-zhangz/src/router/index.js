@@ -51,6 +51,22 @@ const routes = [
         },
         component: () => import("../views/Dept.vue"),
       },
+      {
+        name: "休假管理",
+        path: "/audit/leave",
+        meta: {
+          title: "休假管理",
+        },
+        component: () => import("../views/Leave.vue"),
+      },
+      {
+        name: "待审批",
+        path: "/audit/approve",
+        meta: {
+          title: "审批管理",
+        },
+        component: () => import("../views/Approve.vue"),
+      },
     ],
   },
   {
@@ -61,11 +77,39 @@ const routes = [
       title: "登录页",
     },
   },
+  {
+    name: "404",
+    path: "/404",
+    component: () => import("../views/404.vue"),
+    meta: {
+      title: "404页面",
+    },
+  },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+});
+
+function checkPermission(path) {
+  let hasPermission = router
+    .getRoutes()
+    .filter((route) => route.path == path).length;
+  if (hasPermission) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+router.beforeEach((to, from, next) => {
+  if (checkPermission(to.path)) {
+    document.title = to.meta.title;
+    next();
+  } else {
+    next("/404");
+  }
 });
 
 export default router;

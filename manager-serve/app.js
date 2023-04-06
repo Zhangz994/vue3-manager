@@ -12,6 +12,7 @@ const users = require("./routes/users");
 const menus = require("./routes/menus");
 const depts = require("./routes/depts");
 const roles = require("./routes/roles");
+const leaves = require("./routes/leaves");
 const jwt = require("jsonwebtoken");
 const koajwt = require("koa-jwt");
 const util = require("./utils/util");
@@ -73,6 +74,7 @@ router.use(users.routes(), users.allowedMethods());
 router.use(menus.routes(), menus.allowedMethods());
 router.use(roles.routes(), roles.allowedMethods());
 router.use(depts.routes(), depts.allowedMethods());
+router.use(leaves.routes(), leaves.allowedMethods());
 // routes
 app.use(router.routes(), router.allowedMethods());
 
